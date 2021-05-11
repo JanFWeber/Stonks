@@ -36,7 +36,11 @@ public class SearchFragment extends Fragment {
                 //Test if Python script is working
                 Python python = Python.getInstance();
                 PyObject pythonfile = python.getModule("script");
-                String answer = pythonfile.callAttr("helloworld", symbol).toString();
+                String stockName = pythonfile.callAttr("getSymbol", symbol).toString();
+                int price = pythonfile.callAttr("getPrice", symbol).toInt();
+                String advancedStats = pythonfile.callAttr("getAdvancedStats", symbol).toString();
+                String quote = pythonfile.callAttr("getQuote", symbol).toString();
+
             }
         });
 
