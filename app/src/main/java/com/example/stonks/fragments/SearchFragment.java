@@ -40,7 +40,6 @@ public class SearchFragment extends Fragment {
                 int price = pythonfile.callAttr("getPrice", symbol).toInt();
                 String advancedStats = pythonfile.callAttr("getAdvancedStats", symbol).toString();
                 String quote = pythonfile.callAttr("getQuote", symbol).toString();
-
             }
         });
 
