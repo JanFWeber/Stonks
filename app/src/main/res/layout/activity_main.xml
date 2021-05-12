@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@android:color/holo_purple">
 
     <FrameLayout
         android:id="@+id/fragment_container"
@@ -19,5 +20,12 @@
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_navigation"
         android:background="?android:attr/windowBackground"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:textSize="30sp"
+        android:layout_centerInParent="true"/>
 
 </RelativeLayout>
