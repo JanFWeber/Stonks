@@ -1,11 +1,10 @@
 package com.example.stonks.repository;
 
-<<<<<<< HEAD
 import com.example.stonks.models.Item;
 
 import java.util.ArrayList;
 
-public class MemoryStockRepository implements IRepository{
+public class MemoryStockRepository implements IRepository {
 
     private ArrayList<Item> stockList;
 
@@ -23,8 +22,8 @@ public class MemoryStockRepository implements IRepository{
     public void addItem(Item x) {
         // sucht ob Item x bereits Teil der Liste ist, sonst wird es hinzugefügt
         // muss höchstwrs. abgeändert werden, dass anhand einer ID abgeglichen wird!
-        for(Item i: stockList){
-            if(i.equals(x)){
+        for (Item i : stockList) {
+            if (i.equals(x)) {
                 break;
             }
         }
@@ -35,8 +34,8 @@ public class MemoryStockRepository implements IRepository{
     public void removeItem(Item x) {
         // sucht nach Item x, und löscht es wenn gefunden, sonst geschieht nichts
         // muss höchstwrs. abgeändert werden, dass anhand einer ID abgeglichen wird!
-        for(Item i: stockList){
-            if(i.equals(x)){
+        for (Item i : stockList) {
+            if (i.equals(x)) {
                 stockList.remove(i);
                 break;
             }
@@ -64,10 +63,7 @@ public class MemoryStockRepository implements IRepository{
         return stockList;
     }
 
-    public void setList(ArrayList<Item> x){
+    public void setList(ArrayList<Item> x) {
         this.stockList = x;
     }
-=======
-public class MemoryStockRepository {
->>>>>>> origin/master
 }
