@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Stonks"
         android:name="com.chaquo.python.android.PyApplication">
-        <activity android:name=".MainActivity">
+        <activity android:name="MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

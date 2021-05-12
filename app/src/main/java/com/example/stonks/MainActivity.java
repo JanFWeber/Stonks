@@ -1,16 +1,17 @@
 package com.example.stonks;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-
-import com.example.stonks.fragments.HomeFragment;
-import com.example.stonks.fragments.NewsFragment;
-import com.example.stonks.fragments.SearchFragment;
-import com.example.stonks.fragments.TrendingFragment;
+import com.example.stonks.R;
+import com.example.stonks.views.fragments.HomeFragment;
+import com.example.stonks.views.fragments.NewsFragment;
+import com.example.stonks.views.fragments.SearchFragment;
+import com.example.stonks.views.fragments.TrendingFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 

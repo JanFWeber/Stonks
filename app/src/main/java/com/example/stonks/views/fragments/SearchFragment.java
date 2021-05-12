@@ -1,4 +1,4 @@
-package com.example.stonks.fragments;
+package com.example.stonks.views.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
