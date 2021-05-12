@@ -1,5 +1,6 @@
 package com.example.stonks.repository;
 
+<<<<<<< HEAD
 import com.example.stonks.models.Item;
 
 import java.util.ArrayList;
@@ -66,4 +67,7 @@ public class MemoryStockRepository implements IRepository{
     public void setList(ArrayList<Item> x){
         this.stockList = x;
     }
+=======
+public class MemoryStockRepository {
+>>>>>>> origin/master
 }
