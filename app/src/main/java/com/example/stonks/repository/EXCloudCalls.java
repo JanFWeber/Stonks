@@ -1,5 +1,6 @@
 package com.example.stonks.repository;
 
+import com.chaquo.python.PyException;
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 
@@ -29,14 +30,18 @@ public class EXCloudCalls {
         String quote = pythonfile.callAttr("getQuote", symbol).toString(); */
     }
 
-    public double getPrice(String symbol) {
-        return pythonfile.callAttr("getPrice", symbol).toDouble();
+    public double getPrice(String symbol) throws PyException, NullPointerException {
+        PyObject price = pythonfile.callAttr("getPrice", symbol);
+        return price.toDouble();
     }
 
-    //public String getImageLink(String symbol) {
+    public String getLogoLink(String symbol) throws PyException, NullPointerException {
+        PyObject logolink = pythonfile.callAttr("getLogoLink", symbol);
+        return logolink.toString();
+    }
 
-    //}
-
-
-
+    public double getChangePercent(String symbol) throws PyException, NullPointerException{
+        PyObject changePercent = pythonfile.callAttr("getChangePercent", symbol);
+        return changePercent.toDouble();
+    }
 }

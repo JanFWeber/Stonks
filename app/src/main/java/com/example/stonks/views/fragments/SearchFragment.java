@@ -6,11 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.chaquo.python.PyException;
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.example.stonks.R;
@@ -36,7 +38,16 @@ public class SearchFragment extends Fragment {
                 System.out.println(symbol);
                 //Test if Python script is working
                 EXCloudCalls exCloudCalls = EXCloudCalls.getInstance();
-                System.out.println("Preis: " + exCloudCalls.getPrice(symbol));
+                try {
+                    System.out.println("Preis: " + exCloudCalls.getPrice(symbol));
+                    System.out.println("ImageLink: " + exCloudCalls.getLogoLink(symbol));
+                    System.out.println("Change Percent: " + exCloudCalls.getChangePercent(symbol));
+                } catch (PyException pyException) {
+                    Toast.makeText(getActivity(), "Enter a valid symbol.", Toast.LENGTH_LONG).show();
+                } catch (NullPointerException exception) {
+                    Toast.makeText(getActivity(), "Something went wrong.", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
