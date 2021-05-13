@@ -60,10 +60,12 @@ public class MemoryStockRepository implements IRepository {
 
     @Override
     public ArrayList<Item> getList() {
+
         return stockList;
     }
 
     public void setList(ArrayList<Item> x) {
+
         this.stockList = x;
     }
 }
