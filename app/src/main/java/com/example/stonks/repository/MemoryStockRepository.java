@@ -8,22 +8,13 @@ public class MemoryStockRepository implements IRepository {
 
     private ArrayList<Item> stockList;
 
-    private static MemoryStockRepository _instance;
-
-    public static MemoryStockRepository GetInstance() {
-        if (_instance == null) {
-            _instance = new MemoryStockRepository();
-        }
-
-        return _instance;
-    }
 
     @Override
     public void addItem(Item x) {
         // sucht ob Item x bereits Teil der Liste ist, sonst wird es hinzugefügt
-        // muss höchstwrs. abgeändert werden, dass anhand einer ID abgeglichen wird!
+        // sucht nun anhand von Symbol
         for (Item i : stockList) {
-            if (i.equals(x)) {
+            if (i.getSymbol().equals(x.getSymbol())) {
                 break;
             }
         }
@@ -33,9 +24,9 @@ public class MemoryStockRepository implements IRepository {
     @Override
     public void removeItem(Item x) {
         // sucht nach Item x, und löscht es wenn gefunden, sonst geschieht nichts
-        // muss höchstwrs. abgeändert werden, dass anhand einer ID abgeglichen wird!
+        // sucht nun anhand von Symbol
         for (Item i : stockList) {
-            if (i.equals(x)) {
+            if (i.getSymbol().equals(x.getSymbol())) {
                 stockList.remove(i);
                 break;
             }
@@ -48,15 +39,6 @@ public class MemoryStockRepository implements IRepository {
         // to be completed
     }
 
-    @Override
-    public void saveList() {
-        // to be completed
-
-    }
-
-    public void loadList() {
-
-    }
 
     @Override
     public ArrayList<Item> getList() {

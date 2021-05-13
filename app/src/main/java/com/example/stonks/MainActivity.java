@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    MemoryStockRepository stocksave;
+    StockService stockshelter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
-        stocksave = new MemoryStockRepository();
+        MemoryStockRepository repo = new MemoryStockRepository();
+        stockshelter = new StockService(repo);
         loadData();
     }
 
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
-        String json = gson.toJson(stocksave.getList());
+        String json = gson.toJson(stockshelter.getList());
         editor.putString("stocks", json);
         editor.apply();
     }
@@ -75,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
         Gson gson = new Gson();
         String json = sharedPreferences.getString("stocks", null);
         Type type = new TypeToken<ArrayList<Item>>() {}.getType();
-        stocksave.setList(gson.fromJson(json, type));
-        if(stocksave.getList() == null){
-            stocksave.setList(new ArrayList<Item>());
+        stockshelter.setList(gson.fromJson(json, type));
+        if(stockshelter.getList() == null){
+            stockshelter.setList(new ArrayList<Item>());
         }
     }
 

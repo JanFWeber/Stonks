@@ -4,13 +4,19 @@ public class Item {
     private String name;
     private float value;
     private float change;
+    private String symbol;
 
-    public Item(String name){
+    public Item(String name, String symbol){
         this.name = name;
+        this.symbol = symbol;
     }
 
     public String getName(){
         return this.name;
+    }
+
+    public String getSymbol() {
+        return this.symbol;
     }
 
     public float getValue(){

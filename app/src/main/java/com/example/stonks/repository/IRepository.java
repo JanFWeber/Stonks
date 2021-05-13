@@ -12,8 +12,6 @@ public interface IRepository {
 
     void updateList();
 
-    void saveList();
-
     ArrayList<Item> getList();
 
     void setList(ArrayList<Item> x);
