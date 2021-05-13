@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        itemName = new ArrayList<>();
+       /* itemName = new ArrayList<>();
         itemLogo = new ArrayList<>();
         itemPreis = new ArrayList<>();
 
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView1.setLayoutManager(rvlayoutManager1);
 
         rvadapter1 =new RvAdapterKlasse();
-        recyclerView1.setAdapter(rvadapter1);
+        recyclerView1.setAdapter(rvadapter1); */
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
