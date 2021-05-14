@@ -18,13 +18,15 @@
         android:layout_width="wrap_content"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
         android:layout_marginBottom="3dp"
         android:layout_toEndOf="@+id/imageViewLogo"
         android:layout_toRightOf="@+id/imageViewLogo"
+        android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="TextView"
+        android:textColor="#000000"
         android:textSize="24sp" />
 
     <TextView
@@ -40,6 +42,8 @@
         android:gravity="center"
         android:text="TextView"
         android:textSize="24sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#000000"
         />
 
 
