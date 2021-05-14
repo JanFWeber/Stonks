@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.stonks.views.fragments.HomeFragment;
+
 public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHolderKlasse> {
 
 
@@ -47,9 +49,9 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
     @Override
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull ViewHolderKlasse holder, int position) {
 
-        holder.itemTextView.setText(MainActivity.itemName.get(position));
-        holder.itemImageView.setImageResource(MainActivity.itemLogo.get(position));
-        holder.itemTextViewPreis.setText(MainActivity.itemPreis.get(position));
+        holder.itemTextView.setText(HomeFragment.itemName.get(position));
+        holder.itemImageView.setImageResource(HomeFragment.itemLogo.get(position));
+        holder.itemTextViewPreis.setText(HomeFragment.itemPreis.get(position));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +69,6 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
     public int getItemCount() {
 
 
-        return MainActivity.itemName.size();
+        return HomeFragment.itemName.size();
     }
 }
