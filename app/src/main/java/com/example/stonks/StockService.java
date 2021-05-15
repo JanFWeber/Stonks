@@ -12,7 +12,7 @@ public class StockService {
 
     private IRepository repository;
 
-    public StockService(IRepository repository) {
+    private StockService(IRepository repository) {
         this.repository = repository;
     }
 

@@ -26,6 +26,11 @@ def getChangePercent(symbol):
     #print(data)
     return data['changePercent']
 
+def getChartData(symbol):
+    data = client.chart(symbol)
+    return data
 
-#print(getLogoLink('AAPL'))
-#print(getExtendedChangePercent('AAPL'))
+def getCompanyName(symbol):
+    data = getQuote(symbol)
+    return data['companyName']
+
