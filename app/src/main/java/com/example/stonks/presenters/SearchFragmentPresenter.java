@@ -41,8 +41,4 @@ public class SearchFragmentPresenter{
         return new Stock(companyName, symbol);
     }
 
-    /*
-    Verbindung zur api muss noch hergestellt werden.
-    Kann eine Suchleiste erscheinen oder wie kann man die Suche mit Hilfe der api umsetzen?
-     */
 }

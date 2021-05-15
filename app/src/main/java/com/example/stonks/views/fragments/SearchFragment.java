@@ -53,7 +53,6 @@ public class SearchFragment extends Fragment implements ISearchFragment {
                 } catch (NullPointerException nullPointerException) {
                     Toast.makeText(getActivity(), "Something went wrong.", Toast.LENGTH_LONG).show();
                 }
-
             }
         });
 

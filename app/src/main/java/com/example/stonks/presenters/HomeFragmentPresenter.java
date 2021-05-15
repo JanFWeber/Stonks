@@ -1,6 +1,23 @@
 package com.example.stonks.presenters;
 
+import com.example.stonks.StockService;
+import com.example.stonks.models.Item;
+import com.example.stonks.views.viewInterfaces.IHomeFragement;
+
+import java.util.ArrayList;
+
 public class HomeFragmentPresenter {
+
+    private IHomeFragement homeFragement;
+
+    public HomeFragmentPresenter(IHomeFragement homeFragement) {
+        this.homeFragement = homeFragement;
+    }
+
+    public void getCurrentItems() {
+        ArrayList<Item> items = StockService.GetInstance().getList();
+        homeFragement.updateItemList(items);
+    }
 
     /*
     getter von Search oder Plus knopf

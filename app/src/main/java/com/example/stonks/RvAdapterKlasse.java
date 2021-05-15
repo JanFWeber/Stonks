@@ -9,10 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.stonks.models.Item;
+import com.example.stonks.models.Stock;
 import com.example.stonks.views.fragments.HomeFragment;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHolderKlasse> {
 
+
+    private ArrayList<Item> stockArrayList;
 
     public class ViewHolderKlasse extends RecyclerView.ViewHolder {
         TextView itemTextView;
@@ -26,6 +33,15 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
             itemImageView = (ImageView) itemView.findViewById(R.id.imageViewLogo);
             itemTextViewPreis = (TextView) itemView.findViewById(R.id.textViewPreis);
         }
+
+        public void setStock(Item item) {
+            itemTextView.setText(item.getName());
+            itemImageView.setImageResource(R.drawable.ic_apple_logo_black);
+            //Formatierung von float zu String mit 2 Nachkommastellen
+            DecimalFormat decimalFormat = new DecimalFormat("#.00");
+            String value = decimalFormat.format(item.getValue());
+            itemTextViewPreis.setText(value);
+        }
     }
 
     @NonNull
@@ -38,24 +54,27 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull ViewHolderKlasse holder, int position) {
-        holder.itemTextView.setText(HomeFragment.itemName.get(position));
+        Item item = stockArrayList.get(position);
+        holder.setStock(item);
+        /*holder.itemTextView.setText(HomeFragment.
         holder.itemImageView.setImageResource(HomeFragment.itemLogo.get(position));
-        holder.itemTextViewPreis.setText(HomeFragment.itemPreis.get(position));
+        holder.itemTextViewPreis.setText(HomeFragment.itemPreis.get(position)); */
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
 
 
             }
         });
-
-
-
     }
 
     @Override
     public int getItemCount() {
-        return HomeFragment.itemName.size();
+        return stockArrayList.size();
+    }
+
+    public void updateList(ArrayList<Item> stockArrayList) {
+        this.stockArrayList = stockArrayList;
+        notifyDataSetChanged();
     }
 }
