@@ -1,5 +1,6 @@
 package com.example.stonks;
 
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.stonks.models.Item;
 import com.example.stonks.models.Stock;
+import com.example.stonks.repository.EXCloudCalls;
 import com.example.stonks.views.fragments.HomeFragment;
+import com.squareup.picasso.Picasso;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -36,9 +41,10 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
 
         public void setStock(Item item) {
             itemTextView.setText(item.getName());
-            itemImageView.setImageResource(R.drawable.ic_apple_logo_black);
+            Picasso.get().load(item.getLogoURL()).into(itemImageView);
             //Formatierung von float zu String mit 2 Nachkommastellen
             DecimalFormat decimalFormat = new DecimalFormat("#.00");
+            //String value = decimalFormat.format(item.getValue());
             String value = decimalFormat.format(item.getValue());
             itemTextViewPreis.setText(value);
         }
@@ -75,6 +81,7 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
 
     public void updateList(ArrayList<Item> stockArrayList) {
         this.stockArrayList = stockArrayList;
+
         notifyDataSetChanged();
     }
 }
