@@ -3,6 +3,7 @@ package com.example.stonks;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,6 +21,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,8 +30,7 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    StockService stockshelter;
-
+    StockService stockService;
 
 
 
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         MemoryStockRepository repo = new MemoryStockRepository();
-        stockshelter = new StockService(repo);
+        stockService = StockService.GetInstance();
         loadData();
     }
 
@@ -75,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
-        String json = gson.toJson(stockshelter.getList());
+        String json = gson.toJson(stockService.getList());
         editor.putString("stocks", json);
         editor.apply();
     }
@@ -85,9 +87,9 @@ public class MainActivity extends AppCompatActivity {
         Gson gson = new Gson();
         String json = sharedPreferences.getString("stocks", null);
         Type type = new TypeToken<ArrayList<Item>>() {}.getType();
-        stockshelter.setList(gson.fromJson(json, type));
-        if(stockshelter.getList() == null){
-            stockshelter.setList(new ArrayList<Item>());
+        stockService.setList(gson.fromJson(json, type));
+        if(stockService.getList() == null){
+            stockService.setList(new ArrayList<Item>());
         }
     }
 

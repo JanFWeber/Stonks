@@ -20,19 +20,11 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
         TextView itemTextViewPreis;
 
 
-
-
         public ViewHolderKlasse(@NonNull @org.jetbrains.annotations.NotNull View itemView) {
             super(itemView);
-
             itemTextView = (TextView) itemView.findViewById(R.id.textViewAktie);
             itemImageView = (ImageView) itemView.findViewById(R.id.imageViewLogo);
             itemTextViewPreis = (TextView) itemView.findViewById(R.id.textViewPreis);
-
-
-
-
-
         }
     }
 
@@ -40,22 +32,19 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
     @org.jetbrains.annotations.NotNull
     @Override
     public ViewHolderKlasse onCreateViewHolder(@NonNull @org.jetbrains.annotations.NotNull ViewGroup parent, int viewType) {
-
         View itemView1 = LayoutInflater.from(parent.getContext()).inflate(R.layout.aktien_layout1, null);
-
         return new ViewHolderKlasse(itemView1);
     }
 
     @Override
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull ViewHolderKlasse holder, int position) {
-
         holder.itemTextView.setText(HomeFragment.itemName.get(position));
         holder.itemImageView.setImageResource(HomeFragment.itemLogo.get(position));
         holder.itemTextViewPreis.setText(HomeFragment.itemPreis.get(position));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
 
 
             }
@@ -67,8 +56,6 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
 
     @Override
     public int getItemCount() {
-
-
         return HomeFragment.itemName.size();
     }
 }

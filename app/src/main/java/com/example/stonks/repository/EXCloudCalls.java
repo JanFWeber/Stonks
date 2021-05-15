@@ -8,6 +8,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class EXCloudCalls {
 
     //Singleton Pattern, dass Python nur einmal ausgeführt wird
@@ -43,5 +45,15 @@ public class EXCloudCalls {
     public double getChangePercent(String symbol) throws PyException, NullPointerException{
         PyObject changePercent = pythonfile.callAttr("getChangePercent", symbol);
         return changePercent.toDouble();
+    }
+
+    public String getChartData(String symbol) throws PyException, NullPointerException {
+        PyObject chartData = pythonfile.callAttr("getChartData", symbol);
+        return String.valueOf(chartData.asList());
+    }
+
+    public String getCompanyName(String symbol) throws PyException, NullPointerException {
+        PyObject companyName = pythonfile.callAttr("getCompanyName", symbol);
+        return companyName.toString();
     }
 }
