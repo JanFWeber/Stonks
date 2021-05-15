@@ -16,7 +16,7 @@ public class EinzelaktieFragmentPresenter {
         Item i = new Item(); //item info ziehen
         EXCloudCalls exCloudCalls = EXCloudCalls.getInstance();
 
-        i.
+
 
     }
 }

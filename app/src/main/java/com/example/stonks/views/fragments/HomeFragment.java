@@ -19,7 +19,6 @@ import com.example.stonks.presenters.HomeFragmentPresenter;
 import com.example.stonks.views.viewInterfaces.IHomeFragement;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class HomeFragment extends Fragment implements IHomeFragement {
 
