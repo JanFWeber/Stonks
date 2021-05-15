@@ -3,6 +3,7 @@ package com.example.stonks;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,6 +21,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,7 +31,6 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
 
     StockService stockshelter;
-
 
 
 
