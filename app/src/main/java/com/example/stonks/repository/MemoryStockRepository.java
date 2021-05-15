@@ -15,7 +15,7 @@ public class MemoryStockRepository implements IRepository {
         // sucht nun anhand von Symbol
         for (Item i : stockList) {
             if (i.getSymbol().equals(x.getSymbol())) {
-                break;
+                return;
             }
         }
         stockList.add(x);
@@ -28,7 +28,7 @@ public class MemoryStockRepository implements IRepository {
         for (Item i : stockList) {
             if (i.getSymbol().equals(x.getSymbol())) {
                 stockList.remove(i);
-                break;
+                return;
             }
         }
 
