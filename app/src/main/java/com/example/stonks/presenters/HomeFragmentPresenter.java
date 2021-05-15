@@ -2,8 +2,11 @@ package com.example.stonks.presenters;
 
 import com.example.stonks.StockService;
 import com.example.stonks.models.Item;
+import com.example.stonks.repository.EXCloudCalls;
 import com.example.stonks.views.viewInterfaces.IHomeFragement;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class HomeFragmentPresenter {
@@ -16,8 +19,24 @@ public class HomeFragmentPresenter {
 
     public void getCurrentItems() {
         ArrayList<Item> items = StockService.GetInstance().getList();
+        //Aktuelle Daten von API abfragen
+       EXCloudCalls exCloudCalls = EXCloudCalls.getInstance();
+        for(Item i: items) {
+            String symbol = i.getSymbol();
+            i.setValue(exCloudCalls.getPrice(symbol));
+            i.setLogoURL(exCloudCalls.getLogoLink(symbol));
+            /*try {
+                i.setLogoURL(new URL(urlString));
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } */
+            i.setChange(exCloudCalls.getChangePercent(symbol));
+        }
+
         homeFragement.updateItemList(items);
     }
+
+
 
     /*
     getter von Search oder Plus knopf

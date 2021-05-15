@@ -29,13 +29,14 @@ public class SearchFragmentPresenter{
     }
 
     public Stock searchStock(String symbol) throws PyException, NullPointerException {
-        //Test if Python script is working
+
         EXCloudCalls exCloudCalls = EXCloudCalls.getInstance();
-        System.out.println("Preis: " + exCloudCalls.getPrice(symbol));
-        System.out.println("ImageLink: " + exCloudCalls.getLogoLink(symbol));
-        System.out.println("Change Percent: " + exCloudCalls.getChangePercent(symbol));
-        System.out.println("ChartData: " + exCloudCalls.getChartData(symbol));
-        System.out.println(("CompanyName: " + exCloudCalls.getCompanyName(symbol)));
+        //Test if Python script is working
+        //System.out.println("Preis: " + exCloudCalls.getPrice(symbol));
+        //System.out.println("ImageLink: " + exCloudCalls.getLogoLink(symbol));
+        //System.out.println("Change Percent: " + exCloudCalls.getChangePercent(symbol));
+        //System.out.println("ChartData: " + exCloudCalls.getChartData(symbol));
+        //System.out.println(("CompanyName: " + exCloudCalls.getCompanyName(symbol)));
         String companyName = exCloudCalls.getCompanyName((symbol));
 
         return new Stock(companyName, symbol);
