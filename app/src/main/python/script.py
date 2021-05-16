@@ -37,4 +37,46 @@ def getCompanyName(symbol):
     data = getQuote(symbol)
     return data['companyName']
 
-print(getPrice('AAPL'))
+def getOpen(symbol):
+    data = getQuote(symbol)
+    return data['open']
+
+def getLow(symbol):
+    data = getQuote(symbol)
+    return data['low']
+
+def getVolume(symbol):
+    data = getQuote(symbol)
+    return data['volume']
+
+def getHigh(symbol):
+    data = getQuote(symbol)
+    return data['high']
+
+def getPeRatio(symbol):
+    data = getQuote(symbol)
+    return data['peRatio']
+
+def getMktCap(symbol):
+    data = getQuote(symbol)
+    return data['marketCap']
+
+def getHigh52(symbol):
+    data = getQuote(symbol)
+    return data['week52High']
+
+def getLow52(symbol):
+    data = getQuote(symbol)
+    return data['week52Low']
+
+def getAvgVolume(symbol):
+    data = getQuote(symbol)
+    return data['avgTotalVolume']
+
+#def getEps(symbol):
+#   data = getQuote(symbol)
+#  return data['']
+
+
+
+#print(getQuote('AAPL'))
