@@ -50,6 +50,7 @@ public class EinzelaktieFragment extends Fragment implements IEinzelaktieFragmen
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_einzelaktie, container, false);
 
+        EXCloudCalls.getInstance().setQuote(symbol);
 
         itemTextView = v.findViewById(R.id.textViewAktie);
         itemTextView.setText(einzelaktieFragmentPresenter.getName(symbol));
