@@ -23,7 +23,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IDetailView{
 
     StockService stockService;
 
@@ -100,9 +100,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    protected static void showDetails(String symbol){
+    @Override
+    public void showDetails(String symbol){
         EinzelaktieFragment selectedStock = new EinzelaktieFragment(symbol);
-        //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedStock).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedStock).commit();
     }
 
 }
