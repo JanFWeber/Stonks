@@ -4,8 +4,6 @@ import com.chaquo.python.PyException;
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 
-import java.net.URL;
-
 public class EXCloudCalls {
 
     //Singleton Pattern, dass Python nur einmal ausgeführt wird
@@ -52,4 +50,58 @@ public class EXCloudCalls {
         PyObject companyName = pythonfile.callAttr("getCompanyName", symbol);
         return companyName.toString();
     }
+
+    /*
+    public double getOpen(String symbol) throws PyException, NullPointerException{
+        PyObject open = //pythonfile.callAttr("getCompanyName", symbol);
+        return open.toDouble();
+    }
+
+    public double getLow(String symbol) throws PyException, NullPointerException{
+        PyObject low = //pythonfile.callAttr("getCompanyName", symbol);
+        return low.toDouble();
+    }
+
+    public double getVolume(String symbol) throws PyException, NullPointerException{
+        PyObject volume = //pythonfile.callAttr("getCompanyName", symbol);
+        return volume.toDouble();
+    }
+
+    public double getHigh(String symbol) throws PyException, NullPointerException{
+        PyObject high = //pythonfile.callAttr("getCompanyName", symbol);
+        return high.toDouble();
+    }
+
+    public double getPeRatio(String symbol) throws PyException, NullPointerException{
+        PyObject peRatio = //pythonfile.callAttr("getCompanyName", symbol);
+        return peRatio.toDouble();
+    }
+
+    public double getMktCap(String symbol) throws PyException, NullPointerException{
+        PyObject mktCap = //pythonfile.callAttr("getCompanyName", symbol);
+        return mktCap.toDouble();
+    }
+
+    public double getHigh52(String symbol) throws PyException, NullPointerException{
+        PyObject high52 = //pythonfile.callAttr("getCompanyName", symbol);
+        return high52.toDouble();
+    }
+
+    public double getLow52(String symbol) throws PyException, NullPointerException{
+        PyObject low52 = //pythonfile.callAttr("getCompanyName", symbol);
+        return low52.toDouble();
+    }
+
+    public double getAvgVol(String symbol) throws PyException, NullPointerException{
+        PyObject avgVol = //pythonfile.callAttr("getCompanyName", symbol);
+        return avgVol.toDouble();
+    }
+
+    public double getEps(String symbol) throws PyException, NullPointerException{
+        PyObject eps = //pythonfile.callAttr("getCompanyName", symbol);
+        return eps.toDouble();
+    }
+
+     */
+
 }
