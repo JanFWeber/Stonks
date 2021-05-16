@@ -20,9 +20,7 @@ public class TrendingFragment extends Fragment {
     }
 
     /*
-    new void GridLayout{
-        android:layout_width="match_parent";
-        android:layout_height="match_parent";
+    new void LinearLayout{
         ArrayList<Item> items = StockService.GetInstance().getList();
         add.items.getchangepercent.sort();
     }
