@@ -1,5 +1,6 @@
 package com.example.stonks.views.viewInterfaces;
 
 public interface IEinzelaktieFragment {
-    void fetchData(String symbol);
+    void fetchDataSuccessful();
+    void fetchDataFailed();
 }

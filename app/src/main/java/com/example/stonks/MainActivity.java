@@ -1,18 +1,16 @@
 package com.example.stonks;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
 import com.example.stonks.models.Item;
 import com.example.stonks.repository.MemoryStockRepository;
+import com.example.stonks.views.fragments.EinzelaktieFragment;
 import com.example.stonks.views.fragments.HomeFragment;
 import com.example.stonks.views.fragments.NewsFragment;
 import com.example.stonks.views.fragments.SearchFragment;
@@ -21,11 +19,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -103,6 +98,11 @@ public class MainActivity extends AppCompatActivity {
         if(stockService.getList() == null){
             stockService.setList(new ArrayList<Item>());
         }
+    }
+
+    protected static void showDetails(String symbol){
+        EinzelaktieFragment selectedStock = new EinzelaktieFragment(symbol);
+        //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedStock).commit();
     }
 
 }
