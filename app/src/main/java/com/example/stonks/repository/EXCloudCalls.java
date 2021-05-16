@@ -51,6 +51,11 @@ public class EXCloudCalls {
         return companyName.toString();
     }
 
+    //Aufrufen vor nachfolgenden Gettern!!!
+    public void setQuote(String symbol) throws PyException, NullPointerException {
+        PyObject open = pythonfile.callAttr("setQuote", symbol);
+    }
+
 
     public double getOpen(String symbol) throws PyException, NullPointerException{
         PyObject open = pythonfile.callAttr("getOpen", symbol);

@@ -1,8 +1,13 @@
 import pyEX
 import json
 
-#client = pyEX.Client(api_token = 'Tpk_340be1708c104fc592c0af6497509731', version='sandbox')
-client = pyEX.Client(api_token = 'pk_432538e4010b4b11b081550c64338867')
+client = pyEX.Client(api_token = 'Tpk_340be1708c104fc592c0af6497509731', version='sandbox')
+#client = pyEX.Client(api_token = 'pk_432538e4010b4b11b081550c64338867')
+quote = {}
+
+def setQuote(symbol):
+    global quote
+    quote = getQuote(symbol)
 
 def getSymbol(symbol):
     return symbol
@@ -37,46 +42,39 @@ def getCompanyName(symbol):
     data = getQuote(symbol)
     return data['companyName']
 
+#setQuote muss einmal zuvor aufgerufen worden sein
 def getOpen(symbol):
-    data = getQuote(symbol)
-    return data['open']
+    return quote['open']
 
 def getLow(symbol):
     data = getQuote(symbol)
     return data['low']
 
 def getVolume(symbol):
-    data = getQuote(symbol)
-    return data['volume']
+    return quote['volume']
 
 def getHigh(symbol):
-    data = getQuote(symbol)
-    return data['high']
+    return quote['high']
 
 def getPeRatio(symbol):
-    data = getQuote(symbol)
-    return data['peRatio']
+    return quote['peRatio']
 
 def getMktCap(symbol):
-    data = getQuote(symbol)
-    return data['marketCap']
+    return quote['marketCap']
 
 def getHigh52(symbol):
-    data = getQuote(symbol)
-    return data['week52High']
+    return quote['week52High']
 
 def getLow52(symbol):
-    data = getQuote(symbol)
-    return data['week52Low']
+    return quote['week52Low']
 
 def getAvgVolume(symbol):
-    data = getQuote(symbol)
-    return data['avgTotalVolume']
+    return quote['avgTotalVolume']
 
 #def getEps(symbol):
-#   data = getQuote(symbol)
-#  return data['']
+#  quote data['']
 
 
-
-#print(getQuote('AAPL'))
+setQuote('AAPL')
+#print(quote)
+print(getMktCap('AAPL'))
