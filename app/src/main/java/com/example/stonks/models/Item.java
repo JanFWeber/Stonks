@@ -9,9 +9,10 @@ public class Item {
     private String symbol;
     private String logoURL;
 
-    public Item(String name, String symbol){
+    public Item(String name, String symbol, String logoURL){
         this.name = name;
         this.symbol = symbol;
+        this.logoURL = logoURL;
     }
 
     public String getName(){
@@ -36,10 +37,6 @@ public class Item {
 
     public void setChange(double change){
         this.change = change;
-    }
-
-    public void setLogoURL(String url) {
-        logoURL = url;
     }
 
     public String getLogoURL() {

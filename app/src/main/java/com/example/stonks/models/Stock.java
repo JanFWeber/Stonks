@@ -4,8 +4,8 @@ public class Stock extends Item {
 
 
 
-    public Stock(String name, String symbol) {
-        super(name, symbol);
+    public Stock(String name, String symbol, String logoUrl) {
+        super(name, symbol, logoUrl);
 
     }
 }

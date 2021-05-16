@@ -22,7 +22,6 @@ public class HomeFragmentPresenter {
         for(Item i: items) {
             String symbol = i.getSymbol();
             i.setValue(exCloudCalls.getPrice(symbol));
-            i.setLogoURL(exCloudCalls.getLogoLink(symbol));
             /*try {
                 i.setLogoURL(new URL(urlString));
             } catch (MalformedURLException e) {

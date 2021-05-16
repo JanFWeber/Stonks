@@ -1,8 +1,8 @@
 import pyEX
 import json
 
-client = pyEX.Client(api_token = 'Tpk_340be1708c104fc592c0af6497509731', version='sandbox')
-#client = pyEX.Client(api_token = 'pk_432538e4010b4b11b081550c64338867')
+#client = pyEX.Client(api_token = 'Tpk_340be1708c104fc592c0af6497509731', version='sandbox')
+client = pyEX.Client(api_token = 'pk_432538e4010b4b11b081550c64338867')
 quote = {}
 
 def setQuote(symbol):

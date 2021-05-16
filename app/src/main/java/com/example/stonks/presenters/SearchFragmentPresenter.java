@@ -38,8 +38,9 @@ public class SearchFragmentPresenter{
         //System.out.println("ChartData: " + exCloudCalls.getChartData(symbol));
         //System.out.println(("CompanyName: " + exCloudCalls.getCompanyName(symbol)));
         String companyName = exCloudCalls.getCompanyName((symbol));
+        String logourl = exCloudCalls.getLogoLink(symbol);
 
-        return new Stock(companyName, symbol);
+        return new Stock(companyName, symbol, logourl);
     }
 
 }
