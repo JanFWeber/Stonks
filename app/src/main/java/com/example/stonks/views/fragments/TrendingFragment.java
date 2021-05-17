@@ -19,23 +19,4 @@ public class TrendingFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_trending, container, false);
     }
 
-    /*
-    new void LinearLayout{
-        ArrayList<Item> items = StockService.GetInstance().getList();
-        add.items.getchangepercent.sort();
-    }
-
-
-    public void sort (){
-        for(int i=1; i<=items.length()-1; i++){
-            items[0] = element[i];
-            int j = i-1;
-            while(j>=0 && items[0].compareTo(element[j]) < 0){
-                element[j+1] = element[j];
-                j--;
-            }
-            element[j+1] = items[0];
-        }
-    }
-    */
 }
