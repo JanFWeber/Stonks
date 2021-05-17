@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -59,6 +60,7 @@ public class HomeFragment extends Fragment implements IHomeFragement {
         recyclerView1 = (RecyclerView) v.findViewById(R.id.recyclerView1);
         rvlayoutManager1 = new LinearLayoutManager(getContext());
         recyclerView1.setLayoutManager(rvlayoutManager1);
+        recyclerView1.addItemDecoration(new DividerItemDecoration(recyclerView1.getContext(), DividerItemDecoration.VERTICAL));
 
         adapterKlasse =new RvAdapterKlasse();
         recyclerView1.setAdapter(adapterKlasse);
