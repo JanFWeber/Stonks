@@ -1,5 +1,6 @@
 package com.example.stonks;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,9 +44,15 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
             //Formatierung von float zu String mit 2 Nachkommastellen
             DecimalFormat decimalFormat = new DecimalFormat("#.00");
             String value = decimalFormat.format(item.getValue());
-            itemTextViewPreis.setText(value);
+            itemTextViewPreis.setText(value + " $");
             String change = decimalFormat.format(item.getChange() * 100);
             itemTextViewChange.setText(change + " %");
+            if(item.getChange() < 0) {
+                itemTextViewChange.setTextColor(Color.RED);
+            } else {
+                itemTextViewChange.setTextColor(Color.GREEN);
+            }
+
         }
     }
 
