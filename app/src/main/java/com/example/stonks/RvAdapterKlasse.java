@@ -26,6 +26,7 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
         TextView itemTextView;
         ImageView itemImageView;
         TextView itemTextViewPreis;
+        TextView itemTextViewChange;
 
 
         public ViewHolderKlasse(@NonNull @org.jetbrains.annotations.NotNull View itemView) {
@@ -33,6 +34,7 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
             itemTextView = (TextView) itemView.findViewById(R.id.textViewAktie);
             itemImageView = (ImageView) itemView.findViewById(R.id.imageViewLogo);
             itemTextViewPreis = (TextView) itemView.findViewById(R.id.textViewPreis);
+            itemTextViewChange = itemView.findViewById(R.id.textViewChange);
         }
 
         public void setStock(Item item) {
@@ -40,9 +42,10 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
             Picasso.get().load(item.getLogoURL()).into(itemImageView);
             //Formatierung von float zu String mit 2 Nachkommastellen
             DecimalFormat decimalFormat = new DecimalFormat("#.00");
-            //String value = decimalFormat.format(item.getValue());
             String value = decimalFormat.format(item.getValue());
             itemTextViewPreis.setText(value);
+            String change = decimalFormat.format(item.getChange() * 100);
+            itemTextViewChange.setText(change + " %");
         }
     }
 

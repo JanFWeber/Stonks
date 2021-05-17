@@ -75,6 +75,7 @@ def getAvgVolume(symbol):
 #  quote data['']
 
 
-setQuote('AAPL')
+#setQuote('AAPL')
 #print(quote)
-print(getMktCap('AAPL'))
+#print(getMktCap('AAPL'))
+print(getChartData('AAPL'))
