@@ -54,6 +54,7 @@ public class NewsFragmentPresenter extends RecyclerView.Adapter<NewsFragmentPres
 
 
 
+
     }
 
     @Override
