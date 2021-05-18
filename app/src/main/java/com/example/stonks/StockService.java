@@ -1,6 +1,7 @@
 package com.example.stonks;
 
 import com.example.stonks.models.Item;
+import com.example.stonks.repository.EXCloudCalls;
 import com.example.stonks.repository.IRepository;
 import com.example.stonks.repository.MemoryStockRepository;
 
@@ -35,8 +36,16 @@ public class StockService {
     }
 
 
-    public void updateList(){
-
+    public ArrayList<Item> getWatchlistItems(){
+        //Aktuelle Daten von API abfragen
+        EXCloudCalls exCloudCalls = EXCloudCalls.getInstance();
+        ArrayList<Item> items = repository.getList();
+        for(Item i: items) {
+            String symbol = i.getSymbol();
+            i.setValue(exCloudCalls.getPrice(symbol));
+            i.setChange(exCloudCalls.getChangePercent(symbol));
+        }
+        return items;
     }
 
     public ArrayList<Item> getList(){
