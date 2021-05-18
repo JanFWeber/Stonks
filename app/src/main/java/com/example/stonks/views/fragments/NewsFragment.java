@@ -41,7 +41,7 @@ public class NewsFragment extends Fragment {
 
 
 
-        newsNachricht.addAll(Arrays.asList(" 3 irre günstige Divididendenaktien", " Sicherheitslücke bei neuen Apple AirTags entedeckt", "Nachricht 3", "Nachricht 4", "Nachricht 5","Nachricht 6", "Nachricht 7", "Nachricht 8", "Nachricht 9", "Nachricht 10", "Nachricht 11","Nachricht 12"));
+        newsNachricht.addAll(Arrays.asList(" Adidas plant Wiederaufnahme von Dividendenzahlung", " Sicherheitslücke bei neuen Apple AirTags entdeckt", " Biontech und Moderna wirken wohl auch gegen indische Virus-Variante", " Negativzinsen: Ist die Dividendenaktie Coca-Cola das richtige Heilmittel?", "Nachricht 5","Nachricht 6", "Nachricht 7", "Nachricht 8", "Nachricht 9", "Nachricht 10", "Nachricht 11","Nachricht 12"));
         newsLogo.addAll(Arrays.asList(R.drawable.ic_adidas_logo, R.drawable.ic_apple_logo_black, R.drawable.ic_biontech_logo, R.drawable.ic_coca_cola_logo, R.drawable.ic_coinbase, R.drawable.ic_johnson_and_johnson_logo, R.drawable.ic_mastercard_2019_logo, R.drawable.ic_mcdonald_s_logo, R.drawable.ic_microsoft_logo, R.drawable.ic_sap_logo, R.drawable.ic_square__inc__logo, R.drawable.ic_tesla_motors));
 
 
