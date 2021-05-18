@@ -20,10 +20,6 @@ public class EXCloudCalls {
     private EXCloudCalls() {
         Python python = Python.getInstance();
         pythonfile = python.getModule("script");
-        /*String stockName = pythonfile.callAttr("getSymbol", symbol).toString();
-        int price = pythonfile.callAttr("getPrice", symbol).toInt();
-        String advancedStats = pythonfile.callAttr("getAdvancedStats", symbol).toString();
-        String quote = pythonfile.callAttr("getQuote", symbol).toString(); */
     }
 
     public double getPrice(String symbol) throws PyException, NullPointerException {
