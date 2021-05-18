@@ -61,7 +61,7 @@ public class NewsFragmentPresenter extends RecyclerView.Adapter<NewsFragmentPres
     public int getItemCount() {
 
 
-        return NewsFragment.newsNachricht.size();
+        return NewsFragment.newsLogo.size();
     }
 
 
