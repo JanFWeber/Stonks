@@ -16,20 +16,7 @@ public class HomeFragmentPresenter {
     }
 
     public void getCurrentItems() {
-        ArrayList<Item> items = StockService.GetInstance().getList();
-        //Aktuelle Daten von API abfragen
-       EXCloudCalls exCloudCalls = EXCloudCalls.getInstance();
-        for(Item i: items) {
-            String symbol = i.getSymbol();
-            i.setValue(exCloudCalls.getPrice(symbol));
-            /*try {
-                i.setLogoURL(new URL(urlString));
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } */
-            i.setChange(exCloudCalls.getChangePercent(symbol));
-        }
-
+        ArrayList<Item> items = StockService.GetInstance().getWatchlistItems();
         homeFragement.updateItemList(items);
     }
 

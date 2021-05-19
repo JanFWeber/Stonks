@@ -16,31 +16,12 @@ public class SearchFragmentPresenter{
     }
 
     public void addStock(Stock stock) {
-        /*if(stock == null) {
-            searchFragment.stockAddedFailed("No stock");
-            return;;
-        }
-
-        if(stock.getName() == null || stock.getName().isEmpty()) {
-
-        } */
         StockService.GetInstance().addItem(stock);
         searchFragment.stockAddedSuccesful();
     }
 
     public Stock searchStock(String symbol) throws PyException, NullPointerException {
-
-        EXCloudCalls exCloudCalls = EXCloudCalls.getInstance();
-        //Test if Python script is working
-        //System.out.println("Preis: " + exCloudCalls.getPrice(symbol));
-        //System.out.println("ImageLink: " + exCloudCalls.getLogoLink(symbol));
-        //System.out.println("Change Percent: " + exCloudCalls.getChangePercent(symbol));
-        //System.out.println("ChartData: " + exCloudCalls.getChartData(symbol));
-        //System.out.println(("CompanyName: " + exCloudCalls.getCompanyName(symbol)));
-        String companyName = exCloudCalls.getCompanyName((symbol));
-        String logourl = exCloudCalls.getLogoLink(symbol);
-
-        return new Stock(companyName, symbol, logourl);
+        return StockService.GetInstance().searchStock(symbol);
     }
 
 }
