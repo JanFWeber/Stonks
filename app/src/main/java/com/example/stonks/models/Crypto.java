@@ -11,35 +11,35 @@ public class Crypto extends Item{
         super(name, symbol, logoURL);
     }
 
-    private void setTokensAvailable(float x){
+    public void setTokensAvailable(float x){
         this.tokensAvailable = x;
     }
 
-    private float getTokensAvailable(){
+    public float getTokensAvailable(){
         return this.tokensAvailable;
     }
 
-    private void setCirculatingSupply(int x){
+    public void setCirculatingSupply(int x){
         this.circulatingSupply = x;
     }
 
-    private int getCirculatingSupply(){
+    public int getCirculatingSupply(){
         return this.circulatingSupply;
     }
 
-    private void setTotalSupply(int x){
+    public void setTotalSupply(int x){
         this.totalSupply = x;
     }
 
-    private int getTotalSupply(){
+    public int getTotalSupply(){
         return this.totalSupply;
     }
 
-    private void setMaxSupply(int x){
+    public void setMaxSupply(int x){
         this.maxSupply = x;
     }
 
-    private int getMaxSupply(){
+    public int getMaxSupply(){
         return this.maxSupply;
     }
 }
