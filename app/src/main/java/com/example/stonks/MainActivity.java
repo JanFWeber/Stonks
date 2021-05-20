@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements IDetailView{
 
     StockService stockService;
 
-
+    IDetailView detailView;
 
 
     @Override
@@ -102,8 +102,10 @@ public class MainActivity extends AppCompatActivity implements IDetailView{
 
     @Override
     public void showDetails(String symbol){
-        EinzelaktieFragment selectedStock = new EinzelaktieFragment(symbol);
+        EinzelaktieFragment selectedStock = new EinzelaktieFragment("tsla");
+        detailView = this;
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedStock).commit();
+
     }
 
 

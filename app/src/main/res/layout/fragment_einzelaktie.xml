@@ -6,16 +6,6 @@
     tools:context=".views.fragments.EinzelaktieFragment"
     android:orientation="vertical">
 
-    <!--
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@tools:sample/avatars"
-        android:contentDescription="placeholder"
-        />
-
-     -->
 
     <GridLayout
         android:layout_width="match_parent"

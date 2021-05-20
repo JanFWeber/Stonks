@@ -9,9 +9,13 @@ public class EinzelaktieFragmentPresenter {
 
     private IEinzelaktieFragment einzelaktieFragment;
     DecimalFormat decimalFormat = new DecimalFormat("#.00");
+    private String symbol;
 
-    public EinzelaktieFragmentPresenter(IEinzelaktieFragment einzelaktieFragment) {
+
+    public EinzelaktieFragmentPresenter(IEinzelaktieFragment einizelaktieFragment, String symbol) {
+        this.symbol = symbol;
         this.einzelaktieFragment = einzelaktieFragment;
+        EXCloudCalls.getInstance().setQuote(this.symbol);
     }
 
     public String getName(String symbol){

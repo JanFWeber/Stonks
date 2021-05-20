@@ -20,8 +20,10 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
 
 
     private ArrayList<Item> stockArrayList;
+    private String symbol;
+    IDetailView detailView;
+    MainActivity main;
 
-    private IDetailView detailView;
 
     public class ViewHolderKlasse extends RecyclerView.ViewHolder {
         TextView itemTextView;
@@ -68,13 +70,16 @@ public class RvAdapterKlasse extends RecyclerView.Adapter<RvAdapterKlasse.ViewHo
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull ViewHolderKlasse holder, int position) {
         Item item = stockArrayList.get(position);
         holder.setStock(item);
+        symbol = item.getSymbol();
         /*holder.itemTextView.setText(HomeFragment.
         holder.itemImageView.setImageResource(HomeFragment.itemLogo.get(position));
         holder.itemTextViewPreis.setText(HomeFragment.itemPreis.get(position)); */
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                detailView.showDetails(item.getSymbol());
+                main = new MainActivity();
+                main.showDetails(symbol);
+                //detailView.showDetails(item.getSymbol());
             }
         });
     }

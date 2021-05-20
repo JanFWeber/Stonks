@@ -27,7 +27,7 @@ public class EinzelaktieFragment extends Fragment implements IEinzelaktieFragmen
     TextView itemHigh52;
     TextView itemLow52;
     TextView itemAvgVol;
-    TextView itemEps;
+    //TextView itemEps;
 
 
 
@@ -38,7 +38,7 @@ public class EinzelaktieFragment extends Fragment implements IEinzelaktieFragmen
 
     public EinzelaktieFragment(String symbol) {
         this.symbol = symbol;
-        einzelaktieFragmentPresenter = new EinzelaktieFragmentPresenter(this);
+        einzelaktieFragmentPresenter = new EinzelaktieFragmentPresenter(this, symbol);
     }
 
 
