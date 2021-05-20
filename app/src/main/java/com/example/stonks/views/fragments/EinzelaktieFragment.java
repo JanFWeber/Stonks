@@ -16,8 +16,6 @@ import com.example.stonks.views.viewInterfaces.IEinzelaktieFragment;
 
 public class EinzelaktieFragment extends Fragment implements IEinzelaktieFragment {
 
-    EXCloudCalls exCloudCalls = com.example.stonks.repository.EXCloudCalls.getInstance();
-
     TextView itemTextView;
     TextView itemTextViewPreis;
     TextView itemOpen;
@@ -30,6 +28,7 @@ public class EinzelaktieFragment extends Fragment implements IEinzelaktieFragmen
     TextView itemLow52;
     TextView itemAvgVol;
     TextView itemEps;
+
 
 
 

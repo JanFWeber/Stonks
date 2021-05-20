@@ -106,4 +106,5 @@ public class MainActivity extends AppCompatActivity implements IDetailView{
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedStock).commit();
     }
 
+
 }
