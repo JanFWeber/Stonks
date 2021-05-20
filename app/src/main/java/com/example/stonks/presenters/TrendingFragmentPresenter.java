@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,13 +19,13 @@ public class TrendingFragmentPresenter extends RecyclerView.Adapter<TrendingFrag
     public class ViewHolderKlasse3 extends RecyclerView.ViewHolder {
         TextView textViewKurs;
         TextView textViewName;
-
+        ImageView imageViewLogoT;
 
         public ViewHolderKlasse3(@NonNull @org.jetbrains.annotations.NotNull View trendingView) {
             super(trendingView);
             textViewKurs = (TextView) trendingView.findViewById(R.id.textViewKurs);
             textViewName = (TextView) trendingView.findViewById(R.id.textViewName);
-
+            imageViewLogoT = (ImageView) trendingView.findViewById(R.id.imageViewLogoT);
         }
 
     }
@@ -46,7 +47,7 @@ public class TrendingFragmentPresenter extends RecyclerView.Adapter<TrendingFrag
 
         holder3.textViewKurs.setText(TrendingFragment.trendingKurs.get(position));
         holder3.textViewName.setText(TrendingFragment.trendingName.get(position));
-
+        holder3.imageViewLogoT.setImageResource(TrendingFragment.trendingLogo.get(position));
 
 
 
