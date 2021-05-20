@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,6 +24,7 @@ public class NewsFragment extends Fragment {
     RecyclerView recyclerViewNews;
     RecyclerView.Adapter rvadapterNews;
 
+
     public static ArrayList<String> newsNachricht;
     public static ArrayList<Integer> newsLogo;
 
@@ -34,6 +36,7 @@ public class NewsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View n = inflater.inflate(R.layout.fragment_news, container, false);
+
 
 
         newsNachricht = new ArrayList<>();
@@ -48,6 +51,7 @@ public class NewsFragment extends Fragment {
         recyclerViewNews = (RecyclerView) n.findViewById(R.id.recyclerView2);
         rvlayoutManagerNews = new LinearLayoutManager(getContext());
         recyclerViewNews.setLayoutManager(rvlayoutManagerNews);
+        recyclerViewNews.addItemDecoration(new DividerItemDecoration(recyclerViewNews.getContext(), DividerItemDecoration.VERTICAL));
 
         rvadapterNews =new NewsFragmentPresenter();
         recyclerViewNews.setAdapter(rvadapterNews);
